@@ -851,7 +851,7 @@
             <div class="text-800 text-sm font-medium">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -894,7 +894,7 @@
             </div>
           </template>
         </Column>
-        <Column field="name" style="min-width: 100px; width: 300px">
+        <Column field="name" style="min-width: 100px; width: 200px">
           <template #header>
             <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
               F.I.SH
@@ -908,7 +908,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
                 hover:text-blue-500
                 cursor-pointer
               "
@@ -937,7 +937,7 @@
           </template>
         </Column>
         <Column
-          style="min-width: 120px; width: 400px"
+          style="min-width: 120px; width: 300px"
           v-if="!departmentValue?.id"
         >
           <template #header>
@@ -959,7 +959,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <span v-if="!get_adminPermissions('cadry_leader_cadries')"
@@ -1245,7 +1245,6 @@ export default {
         this.organization.organization_id = this.organizationVal?.id;
         this.organization.department_id = this.departmentValue?.id;
         LeaderService.get_LeaderCadry(this.organization).then((res) => {
-          console.log(res.data.cadries);
           this.totalCadries = res.data.cadries.pagination.total;
           let number =
             (this.organization.page - 1) * this.organization.per_page;
@@ -1445,7 +1444,6 @@ export default {
       this.searchBtn();
     },
     changePagination(event) {
-      console.log(event);
       this.organization.page = event.page;
       this.organization.per_page = event.per_page;
       localStorage.setItem("page_1", event.page);
@@ -1468,10 +1466,8 @@ export default {
     },
     changeRowSelect(id) {
       if (this.selectOptions.includes(id) && this.isSelectAll) {
-        console.log(this.unSelectItemId);
         this.unSelectItemId = this.unSelectItemId.filter((item) => item !== id);
       } else if (!this.selectOptions.includes(id) && this.isSelectAll) {
-        console.log(this.unSelectItemId);
         if (!this.unSelectItemId.includes(id)) {
           this.unSelectItemId.push(id);
         }
@@ -1534,7 +1530,6 @@ export default {
 
     // Dowload resume
     DowloadResume(id) {
-      console.table(id);
       this.$refs.word_resume.generateWord(id);
     },
 
@@ -1544,7 +1539,7 @@ export default {
     },
 
     beforeOpen(event) {
-      console.log(event);
+
     },
     // clear additional filter details
     clearFilterDetails() {

@@ -66,7 +66,7 @@
             <div class="text-800 text-sm font-medium">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -85,7 +85,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <div>{{ slotProps.data.name }}</div>
@@ -105,13 +105,13 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
                 text-center
               "
             >
               <Chip
                 :label="slotProps.data.type_qualification.name.toString()"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -137,7 +137,7 @@
             >
               <Chip
                 :label="slotProps.data.directions.toString() "
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -246,7 +246,7 @@
 </template>
 <script>
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb.vue";
-import TablePagination from "@/components/Pagination/TablePagination";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
 import SkillService from "@/service/servises/SkillService";
 import DeleteButton from "../../components/buttons/DeleteButton.vue";
 import EditButton from "../../components/buttons/EditButton.vue";

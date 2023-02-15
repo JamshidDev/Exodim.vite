@@ -96,7 +96,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <div>{{ slotProps.data.name }}</div>
@@ -131,7 +131,7 @@
                 @click="open_Modal(slotProps.data.id, slotProps.data.name)"
                 v-show="slotProps.data.upgrades !== 0"
                 :label="slotProps.data.upgrades.toString()"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -140,7 +140,7 @@
         <Column style="min-width: 50px; width: 160px">
           <template #header>
             <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
-              Yotoqxonaga zarurati yo'q xodimlar
+              Yotoqxonaga z.y. xodimlar
             </div>
           </template>
           <template #body="slotProps">
@@ -163,7 +163,7 @@
               <Chip
                 v-show="slotProps.data.status_bedroom !== 0"
                 :label="slotProps.data.status_bedroom.toString()"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -197,12 +197,12 @@
   </div>
 </template>
   <script>
-import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
+import BreadCrumb from "@/components/BreadCrumb/BreadCrumb.vue";
 import SkillService from "@/service/servises/SkillService";
-import NoDataComponent from "@/components/EmptyComponent/NoDataComponent";
-import TablePagination from "@/components/Pagination/TablePagination";
-import SkillLoader from "@/components/loaders/SkillLoader";
-import OrganizationModal from "@/views/SkillPage/components/OrganizationModal";
+import NoDataComponent from "@/components/EmptyComponent/NoDataComponent.vue";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
+import SkillLoader from "@/components/loaders/SkillLoader.vue";
+import OrganizationModal from "@/views/SkillPage/components/OrganizationModal.vue";
 
 export default {
   components: {

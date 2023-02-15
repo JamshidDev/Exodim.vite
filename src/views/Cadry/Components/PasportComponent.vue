@@ -101,10 +101,10 @@
   </div>
 </template>
 <script>
-import AddButton from "@/components/buttons/AddButton";
-import DeleteButton from "@/components/buttons/DeleteButton";
+import AddButton from "@/components/buttons/AddButton.vue";
+import DeleteButton from "@/components/buttons/DeleteButton.vue";
 import PasportService from "@/service/servises/PasportService";
-import ViewButton from '@/components/buttons/ViewButton'
+import ViewButton from '@/components/buttons/ViewButton.vue'
 export default {
   components: {
     AddButton,

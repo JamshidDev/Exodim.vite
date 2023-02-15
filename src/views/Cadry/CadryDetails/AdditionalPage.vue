@@ -775,18 +775,18 @@
     </div>
   </template>
   <script>
-  import DeleteButton from '@/components/buttons/DeleteButton'
-  import EditButton from '@/components/buttons/EditButton'
-  import ViewButton from '@/components/buttons/ViewButton'
+  import DeleteButton from '@/components/buttons/DeleteButton.vue'
+  import EditButton from '@/components/buttons/EditButton.vue'
+  import ViewButton from '@/components/buttons/ViewButton.vue'
   import formatter from '@/util/formatter'
-  import ProgressBarLoader from '@/components/loaders/ProgressBarLoader'
+  import ProgressBarLoader from '@/components/loaders/ProgressBarLoader.vue'
   import employeeAdditionalService from '@/service/servises/employeeAdditionalService'
   import employeeIncentiveService from '@/service/servises/employeeIncentiveService'
   import employeeStuff from '@/service/servises/employeeStuff'
   import employeeMed from '@/service/servises/employeeMed'
   import VacationService from '@/service/servises/VacationService'
-  import AddButton from '@/components/buttons/AddButton'
-  import PasportComponent from '@/views/Cadry/Components/PasportComponent'
+  import AddButton from '@/components/buttons/AddButton.vue'
+  import PasportComponent from '@/views/Cadry/Components/PasportComponent.vue'
   
   export default {
     components: {

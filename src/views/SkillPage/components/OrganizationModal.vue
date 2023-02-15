@@ -38,7 +38,7 @@
               </Column>
               <Column field="name" header="">
                 <td>
-                  <span class="w-full text-base font-medium ml-2">{{
+                  <span class="w-full text-base font-normal ml-2">{{
                     slotProps.data.name
                   }}</span>
                 </td></Column
@@ -53,7 +53,7 @@
                         mb-2
                         text-sm text-blue-700
                         bg-blue-100
-                        font-bold
+                        font-medium
                       "
                     />
                   </td>
@@ -69,7 +69,7 @@
                     :label="
                       totalCounter(slotProps.data.apparat_id.name).toString()
                     "
-                    class="mr-1 text-sm text-green-700 bg-green-100 font-bold"
+                    class="mr-1 text-sm text-green-700 bg-green-100 font-medium"
                   />
                 </span>
               </template>
@@ -82,7 +82,7 @@
                     :label="
                       totalCounter(slotProps.data.apparat_id.name).toString()
                     "
-                    class="mr-1 text-sm text-green-700 bg-green-100 font-bold"
+                    class="mr-1 text-sm text-green-700 bg-green-100 font-medium"
                   />
                 </td>
               </template>

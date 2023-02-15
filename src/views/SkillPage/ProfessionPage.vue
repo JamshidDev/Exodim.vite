@@ -63,11 +63,8 @@
           <template #body="slotProps">
             <div
               class="
-                text-800
                 w-full
                 text-center text-sm
-                lg:text-base
-                xl:text-base
                 font-normal
               "
             >
@@ -89,7 +86,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <div>{{ slotProps.data.name }}</div>
@@ -111,7 +108,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <span class="text-blue-500">{{
@@ -220,12 +217,12 @@
 </template>
   <script>
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb.vue";
-import NoDataComponent from "@/components/EmptyComponent/NoDataComponent";
-import TablePagination from "@/components/Pagination/TablePagination";
+import NoDataComponent from "@/components/EmptyComponent/NoDataComponent.vue";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
 import DualService from "@/service/servises/DualService";
 import EditButton from "../../components/buttons/EditButton.vue";
 import DeleteButton from "../../components/buttons/DeleteButton.vue";
-import DualLoader from "@/components/loaders/DualLoader";
+import DualLoader from "@/components/loaders/DualLoader.vue";
 export default {
   components: {
     TablePagination,

@@ -20,7 +20,7 @@
 export default {
     methods:{
         goTo(){
-            this.$router.push("/admin")
+            this.$router.push({name:'admin'})
         }
     }
     

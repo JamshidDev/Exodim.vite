@@ -855,11 +855,11 @@ import employeeService from "../../../service/servises/employeeService";
 import organizationsService from "../../../service/servises/organizationsService";
 import { minLength, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
-import EditButton from "@/components/buttons/EditButton";
-import DeleteButton from "@/components/buttons/DeleteButton";
-import TextButton from "@/components/buttons/TextButton";
+import EditButton from "@/components/buttons/EditButton.vue";
+import DeleteButton from "@/components/buttons/DeleteButton.vue";
+import TextButton from "@/components/buttons/TextButton.vue";
 import DepartmentStuffService from "../../../service/servises/DepartmentStuffService";
-import StuffComponent from "@/views/Cadry/Components/StuffComponent";
+import StuffComponent from "@/views/Cadry/Components/StuffComponent.vue";
 import converter from "../../../util/converter";
 export default {
   components: {

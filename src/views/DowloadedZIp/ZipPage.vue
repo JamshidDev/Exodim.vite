@@ -180,13 +180,13 @@
   </div>
 </template>
 <script>
-import BreadCrumb from '@/components/BreadCrumb/BreadCrumb'
-import NoDataComponent from '@/components/EmptyComponent/NoDataComponent'
+import BreadCrumb from '@/components/BreadCrumb/BreadCrumb.vue'
+import NoDataComponent from '@/components/EmptyComponent/NoDataComponent.vue'
 import EksportService from "@/service/servises/EksportService";
 import formatter from "@/util/formatter";
-import ZipLoader from '@/components/loaders/ZipLoader'
-import TablePagination from '@/components/Pagination/TablePagination'
-import DeleteButton from '@/components/buttons/DeleteButton'
+import ZipLoader from '@/components/loaders/ZipLoader.vue'
+import TablePagination from '@/components/Pagination/TablePagination.vue'
+import DeleteButton from '@/components/buttons/DeleteButton.vue'
 export default {
   components: {
     BreadCrumb,

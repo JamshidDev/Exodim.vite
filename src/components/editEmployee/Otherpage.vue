@@ -301,7 +301,7 @@ import formatter from "../../util/formatter";
 import DeleteButton from "../buttons/DeleteButton.vue";
 import EditButton from "../buttons/EditButton.vue";
 import ProgressBarLoader from "../loaders/ProgressBarLoader.vue";
-import DualComponent from '@/views/Cadry/Components/DualComponent'
+import DualComponent from '@/views/Cadry/Components/DualComponent.vue'
 
 export default {
   components: {

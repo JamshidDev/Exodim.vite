@@ -30,7 +30,7 @@
             <div class="text-800 font-semibold">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -63,7 +63,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.cadry.fullname }}
@@ -81,7 +81,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium text-center text-green-500">
+                font-normal text-center text-green-500">
               {{ slotProps.data.staff_status }}
             </div>
             <div v-show="slotProps.data.staff_status!=='Asosiy'" class=" text-sm
@@ -89,7 +89,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium text-center text-yellow-500">
+                font-normal text-center text-yellow-500">
               {{ slotProps.data.staff_status }}
             </div>
           </template>
@@ -181,7 +181,6 @@ export default {
       this.controlLoader(loader)
       DepartmentStuffService.get_StuffCadry({ id, params })
         .then((res) => {
-          console.log(res.data.department_cadries.data);
           this.totalPage = res.data.department_cadries.pagination.total
           let cadrList = [];
           let number = (this.params.page - 1) * this.params.per_page;

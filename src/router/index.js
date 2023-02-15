@@ -284,6 +284,22 @@ const routes = [
         },
       },
       {
+        path: "/admin/types",
+        name: "types",
+
+        component: function () {
+          return import("../views/SkillPage/TypesPage.vue");
+        },
+      },
+      {
+        path: "/admin/dual",
+        name: "dual",
+
+        component: function () {
+          return import("../views/SkillPage/DualPage.vue");
+        },
+      },
+      {
         path: "/admin/skill/organization/:type_id/:direction_id/:date_equal/:railway_id/:name",
         name: "Skill-organization",
 
@@ -501,13 +517,7 @@ const routes = [
       return import("../views/ErrorPage.vue");
     },
   },
-  {
-    path: "/validate",
-    name: "validate",
-    component: function () {
-      return import("../views/VeeValidate.vue");
-    },
-  },
+
   {
     path: "/ziprar",
     name: "ziprar",

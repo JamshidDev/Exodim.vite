@@ -230,7 +230,7 @@
 </template>
   <script>
 import EditButton from "../../../components/buttons/EditButton.vue";
-import DeleteButton from "@/components/buttons/DeleteButton";
+import DeleteButton from "@/components/buttons/DeleteButton.vue";
 import ProgressBarLoader from "../../../components/loaders/ProgressBarLoader.vue";
 import DualService from "@/service/servises/DualService";
 import AddButton from "../../../components/buttons/AddButton.vue"

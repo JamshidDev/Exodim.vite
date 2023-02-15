@@ -1390,7 +1390,6 @@ export default {
       PartStatisticService
         .get_LeaderCadryStatistic(params)
         .then((res) => {
-          console.log(res.data);
           this.allCadries = res.data.all_cadries_count;
           this.allVakant = res.data.vakant;
           this.allSverx = res.data.sverx;
@@ -1564,7 +1563,6 @@ export default {
       PartStatisticService
         .get_PartStatistic(params)
         .then((res) => {
-          console.log(res.data);
           this.allCadries = res.data.all_cadries_count;
           this.allVakant = res.data.vakant;
           this.allSverx = res.data.sverx;
@@ -1774,7 +1772,6 @@ export default {
       organizationsService
         .getDepartment({ organization_id: id })
         .then((res) => {
-          console.log(res.data);
           if (res.data.length) {
             this.departmentList = res.data;
             this.departmentList.unshift({

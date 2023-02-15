@@ -27,7 +27,6 @@
               </SelectButton>
               <Button
                 icon="pi pi-sync"
-                @click="handleSubmit(!v$.$invalid)"
                 class="p-button-secondary "
                 label="Lotin"
                 v-tooltip.bottom="`Ma'lumotlarni lotinchaga o'girish`"

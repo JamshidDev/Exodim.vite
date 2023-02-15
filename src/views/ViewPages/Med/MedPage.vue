@@ -60,7 +60,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-medium">
                 {{ slotProps.data.number }}
               </div>
             </template>

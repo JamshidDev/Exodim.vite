@@ -77,7 +77,7 @@
             </div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -509,7 +509,6 @@ export default {
       DepartmentService.get_Department(params)
         .then((res) => {
           this.totalDepartment = res.data.departments.pagination.total;
-          console.log(res.data.departments);
           let cadrList = [];
           let number = (this.params.page - 1) * this.params.per_page;
           res.data.departments.data.forEach((item) => {
@@ -546,7 +545,6 @@ export default {
         };
         this.controlPartDialog(false);
         if (this.partDialogType) {
-          console.log(this.partDetails.name);
           DepartmentService.create_Department({ data })
             .then((res) => {
               this.get_Department(this.params, false);
@@ -641,7 +639,6 @@ export default {
           classification_id: this.classic? this.classic.code_staff : null,
           staff_full: this.full_stuff,
         };
-        console.table(data);
         DepartmentStuffService.create_DepartmentStuff({ id, data })
           .then((res) => {
             this.get_Department(this.params, false);
@@ -684,7 +681,6 @@ export default {
      search = search.value? search.value : "1", 
         DepartmentService.get_Classifikator({ search })
           .then((res) => {
-            console.log(res.data);
             this.Class_List = res.data;
           })
           .catch((error) => {

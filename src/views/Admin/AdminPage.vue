@@ -50,7 +50,7 @@
         </template>
         <Column header="" style="min-width: 30px; width: 40px">
           <template #body="slotProps">
-            <div class="w-full text-center text-lg font-semibold">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -71,7 +71,7 @@
             </div>
           </template>
         </Column>
-        <Column style="min-width: 16rem">
+        <Column style="min-width: 100px; width: 200px">
           <template #header>
             <div class="text-800 text-sm">F.I.SH</div>
           </template>
@@ -81,14 +81,14 @@
                 text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.name }}
             </div>
           </template>
         </Column>
-        <Column style="min-width:100px; width: 250px">
+        <Column style="min-width:100px">
           <template #header>
             <div class="text-800 font-semibold">Korxona nomi</div>
           </template>
@@ -100,7 +100,7 @@
                 md:text-md
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.organization.name }}
@@ -124,7 +124,7 @@
             >
               <div class="w-full text-center text-red-500">
                 <Tag
-                  class="mr-2 bg-green-100 text-green-600 px-2"
+                  class="mr-2 bg-green-100 text-green-600 px-2 font-medium"
                   icon="pi pi-circle-fill"
                   severity="success"
                   value="Active"
@@ -151,7 +151,7 @@
             >
               <div class="w-full text-center text-red-500">
                 <Tag
-                  class="bg-blue-100 text-blue-700 px-2 text-sm font-semibold"
+                  class="bg-blue-100 text-blue-700 px-2 text-sm font-medium"
                   icon="pi pi-bookmark-fill"
                   severity="unfo"
                   :value="slotProps.data.roles?.name"
@@ -170,7 +170,7 @@
                 text-sm
                 xl:text-base
                 text-left
-                font-medium
+                font-normal
                 flex
                 justify-content-between
               "
@@ -216,11 +216,11 @@
   </div>
 </template>
     <script>
-import TextButton from "@/components/buttons/TextButton";
-import DeleteButton from "@/components/buttons/DeleteButton";
-import EditButton from "@/components/buttons/EditButton";
-import TablePagination from "@/components/Pagination/TablePagination";
-import MedLoader from "@/components/loaders/MedLoader";
+import TextButton from "@/components/buttons/TextButton.vue";
+import DeleteButton from "@/components/buttons/DeleteButton.vue";
+import EditButton from "@/components/buttons/EditButton.vue";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
+import MedLoader from "@/components/loaders/MedLoader.vue";
 import formatter from "@/util/formatter";
 import AdminService from "@/service/servises/AdminService";
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb.vue";

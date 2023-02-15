@@ -31,7 +31,7 @@
               type="number"
               v-model.trim="searchValue"
               placeholder="JSHRni kiriting"
-              class="w-full p-inputtext-sm text-base font-medium"
+              class="w-full p-inputtext-sm text-base font-normal"
               @keyup.enter="searchFromArchive"
               v-maska="'##############'"
             />

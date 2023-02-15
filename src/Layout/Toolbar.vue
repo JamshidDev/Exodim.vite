@@ -151,7 +151,7 @@ export default {
               label: "Chiqish",
               icon: "pi pi-power-off",
               command: () => {
-                this.$router.push("/login");
+                this.logOut()
               },
             },
           ],
@@ -274,6 +274,13 @@ export default {
     },
     poshGo(){
       this.$router.push("/admin")
+    },
+    logOut(){
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('token_created_date');
+      localStorage.removeItem('organization');
+      localStorage.removeItem('Adminpermissions');
+      this.$router.push({name:'login'})
     },
     controlNavbar() {
       this.$emit("controlSidebar");

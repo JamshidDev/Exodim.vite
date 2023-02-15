@@ -157,11 +157,8 @@
           <template #body="slotProps">
             <div
               class="
-                text-800
                 w-full
                 text-center text-sm
-                lg:text-base
-                xl:text-base
                 font-normal
               "
             >
@@ -183,7 +180,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               <div>{{ slotProps.data.name }}</div>
@@ -249,7 +246,7 @@
               <Chip
                 v-show="slotProps.data.upgrades !== 0"
                 :label="slotProps.data.upgrades.toString()"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -258,7 +255,7 @@
         <Column style="min-width: 50px; width: 160px">
           <template #header>
             <div class="text-800 font-semibold">
-              Yotoqxonaga zarurati yo'q xodimlar
+              Yotoqxonaga z.y. xodimlar
             </div>
           </template>
           <template #body="slotProps">
@@ -281,7 +278,7 @@
               <Chip
                 v-show="slotProps.data.status_bedroom !== 0"
                 :label="slotProps.data.status_bedroom.toString()"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-medium"
               />
             </div>
           </template>
@@ -313,11 +310,11 @@
   </div>
 </template>
 <script>
-import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
+import BreadCrumb from "@/components/BreadCrumb/BreadCrumb.vue";
 import SkillService from "@/service/servises/SkillService";
-import NoDataComponent from "@/components/EmptyComponent/NoDataComponent";
-import TablePagination from "@/components/Pagination/TablePagination";
-import SkillLoader from "@/components/loaders/SkillLoader";
+import NoDataComponent from "@/components/EmptyComponent/NoDataComponent.vue";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
+import SkillLoader from "@/components/loaders/SkillLoader.vue";
 import formatter from "../../util/formatter";
 import { mapActions, mapGetters } from "vuex";
 export default {
@@ -387,7 +384,6 @@ export default {
     get_Statistic(params, loader) {
       this.controlLoader(loader);
       SkillService.get_Skill_Statistic(params).then((res) => {
-        console.log(this.params);
         let number = (this.params.page - 1) * this.params.per_page;
         res.data.railways.data.forEach((item) => {
           number++;

@@ -27,7 +27,7 @@
       >
         <Column header="" style="min-width: 30px; width: 40px">
           <template #body="slotProps">
-            <div class="w-full text-center font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -49,7 +49,7 @@
           </template>
         </Column>
 
-        <Column style="min-width: 200px; width: 300px">
+        <Column style="min-width:100px; width: 200px">
           <template #header>
             <div class="text-800 font-semibold">F.I.O</div>
           </template>
@@ -57,11 +57,9 @@
             <div
               class="
                 text-sm
-                sm:text-sm
-                md:text-md
-                lg:text-lg
-                xl:text-lg
-                font-medium
+                lg:text-base
+                xl:text-base
+                font-normal
                 text-left
               "
             >
@@ -74,7 +72,7 @@
             <div class="text-800 font-semibold">To'liq shtat lavozim nomi</div>
           </template>
           <template #body="slotProps">
-            <div class="text-sm sm:text-sm md:text-md lg:text-lg">
+            <div class="text-sm sm:text-sm md:text-md lg:text-base font-normal">
               {{ slotProps.data.staff.staff_full }}
             </div>
           </template>
@@ -88,11 +86,9 @@
               class="
                 w-full
                 text-green-500 text-center text-sm
-                sm:text-sm
-                md:text-md
-                lg:text-lg
-                xl:text-lg
-                font-medium  "
+                lg:text-base
+                xl:text-base
+                font-sm  "
             >
               {{ slotProps.data.staff.staff_status }}
             </div>
@@ -107,10 +103,8 @@
               class="
                 w-full
                 text-center text-sm
-                sm:text-sm
-                md:text-md
-                lg:text-lg
-                xl:text-lg
+                lg:text-base
+                xl:text-base
                 font-medium  "
             >
               {{ slotProps.data.staff.rate }}
@@ -123,10 +117,10 @@
             <div class="text-800 font-semibold">Ta'til</div>
           </template>
           <template #body="slotProps">
-            <div v-show="slotProps.data.staff.status_vacation !=3 " class="bg-yellow-500">
+            <div v-show="slotProps.data.staff.status_vacation !=3 " class="bg-yellow-500 font-normal">
               {{checkVacation(slotProps.data.staff.status_vacation)}}
             </div>
-            <div v-show="slotProps.data.staff.status_vacation == 3">
+            <div v-show="slotProps.data.staff.status_vacation == 3" class="font-normal">
               {{checkVacation(slotProps.data.staff.status_vacation)}} 
             </div>
           </template>
@@ -210,7 +204,6 @@ export default {
         });
         this.cadryList = res.data.cadries.data;
         this.controlLoader(false);
-        console.log(res.data.cadries);
       });
     },
 

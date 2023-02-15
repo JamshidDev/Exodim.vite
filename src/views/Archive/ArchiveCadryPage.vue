@@ -65,7 +65,7 @@
             <div class="text-800 text-sm font-medium">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -89,9 +89,9 @@
           </template>
         </Column>
 
-        <Column field="name" style="min-width: 100px; width: 300px">
+        <Column field="name" style="min-width: 100px; width:200px">
           <template #header>
-            <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
+            <div class="text-800 text-sm lg:text-base xl:text-base font-normal">
               F.I.SH
             </div>
           </template>
@@ -103,7 +103,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
                 cursor-pointer
               "
             >
@@ -138,10 +138,6 @@
             <div
               class="
                 text-sm
-                sm:text-sm
-                md:text-sm
-                lg:text-base
-                xl:text-base
                 font-medium
               "
             >
@@ -280,8 +276,6 @@ export default {
     get_List(loader) {
         this.loading = true;
       Archive.archive_CadryList(this.params).then((res) => {
-        console.log(res.data.cadries.data);
-
         let number = (this.params.page - 1) * this.params.per_page;
         res.data.cadries.data.forEach((item) => {
           number++;
@@ -318,5 +312,3 @@ export default {
   },
 };
 </script>
-<style lang="">
-</style>

@@ -44,12 +44,9 @@
           </template>
           <template #body="slotProps">
             <div class=" text-sm
-                sm:text-sm
-                md:text-sm
-                lg:text-base
-                xl:text-base
+               w-full
                 text-center
-                font-medium">
+                font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -66,7 +63,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.staff_fullname }}
@@ -370,7 +367,6 @@ export default {
       DepartmentStuffService.get_DepartmentStuff({ id, params })
         .then((res) => {
           let cadrList = [];
-          console.log(res.data);
           this.totalItem = res.data.department.pagination.total
           let number = (this.params.page - 1) * this.params.per_page;
           res.data.department.data.forEach((item) => {

@@ -74,7 +74,7 @@
             <div class="text-800 text-sm font-medium">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -97,7 +97,7 @@
             </div>
           </template>
         </Column>
-        <Column style="min-width: 100px; width: 300px">
+        <Column style="min-width: 100px; width: 200px">
           <template #header>
             <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
               F.I.SH
@@ -124,7 +124,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.cadry.department }}
@@ -146,12 +146,12 @@
                 md:text-md
                 lg:text-lg
                 xl:text-lg
-                font-medium
+                font-normal
               "
             >
               <Chip
                 :label="vacationName(slotProps.data.status_decret)"
-                class="mr-2 mb-2 text-sm text-cyan-700 bg-cyan-100 font-bold"
+                class="mr-2 mb-2 text-sm text-cyan-700 bg-cyan-100 font-normal"
               />
             </div>
           </template>
@@ -174,7 +174,7 @@
                   mb-2
                   text-sm text-purple-700
                   bg-purple-100
-                  font-bold
+                  font-medium
                 "
               />
             </div>
@@ -198,7 +198,7 @@
                   mb-2
                   text-sm text-purple-700
                   bg-purple-100
-                  font-bold
+                  font-medium
                 "
               />
             </div>
@@ -215,12 +215,10 @@
             <div
               class="
                 text-sm
-                sm:text-sm
-                md:text-md
-                lg:text-lg
-                xl:text-lg
+                lg:text-base
+                xl:text-base
                 text-center
-                font-medium
+                font-normal
                 flex
                 justify-content-evenly
               "
@@ -424,7 +422,7 @@
   </div>
 </template>
 <script>
-import VacationLoader from "@/components/loaders/VacationLoader";
+import VacationLoader from "@/components/loaders/VacationLoader.vue";
 import TablePagination from "../components/Pagination/TablePagination.vue";
 import formatter from "../util/formatter";
 import DeleteButton from "../components/buttons/DeleteButton.vue";

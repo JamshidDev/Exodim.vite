@@ -760,7 +760,7 @@
 
 </template>
 <script>
-import DeleteButton from "@/components/buttons/DeleteButton";
+import DeleteButton from "@/components/buttons/DeleteButton.vue";
 import { globalValidate } from "../../validation/vuevalidate";
 
 import { minLength, required } from "@vuelidate/validators";

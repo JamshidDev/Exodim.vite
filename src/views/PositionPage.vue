@@ -63,11 +63,7 @@
               class="
                 w-full
                 text-center text-sm
-                sm:text-sm
-                md:text-sm
-                lg:text-base
-                xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.number }}
@@ -88,7 +84,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
               "
             >
               {{ slotProps.data.name }}
@@ -104,7 +100,7 @@
           </template>
           <template #body="slotProps">
             <Dropdown
-              class="w-full p-inputtext-sm py-0 font-medium"
+              class="w-full p-inputtext-sm py-0 font-normal"
               v-model="selectParty[`${slotProps.data.id}`]"
               :options="slotProps.data.departments"
               optionLabel="name"
@@ -127,7 +123,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
                 text-center text-blue-600
               "
             >
@@ -149,7 +145,7 @@
                 md:text-sm
                 lg:text-base
                 xl:text-base
-                font-medium
+                font-normal
                 text-center
               "
             >
@@ -322,7 +318,6 @@ export default {
         .get_Positions(params)
         .then((res) => {
           this.totalPosition = res.data.staffs.pagination.total;
-          console.log(this.totalPosition);
           let cadrList = [];
           let number = (this.position.page - 1) * this.position.per_page;
           res.data.staffs.data.forEach((item) => {
@@ -342,7 +337,6 @@ export default {
       positionService
         .get_postionCategory()
         .then((res) => {
-          console.log(res.data);
           this.positionCategoryList = res.data.categories;
         })
         .catch((error) => {

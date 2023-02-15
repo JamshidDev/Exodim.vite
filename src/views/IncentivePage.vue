@@ -47,13 +47,13 @@
               />
             </div>
             <div class="col-12">
-              <h6 class="text-800 text-center font-semibold">
+              <h6 class="text-800 text-center font-medium">
                 {{ cadry.fullname }}
               </h6>
               <h6
                 class="
                   text-800
-                  font-medium
+                  font-normal
                   my-0
                   text-center text-sm text-yellow-500
                 "
@@ -147,8 +147,8 @@
 <script>
 import IncentiveService from "@/service/servises/IncentiveService";
 import formatter from "@/util/formatter";
-import TablePagination from "@/components/Pagination/TablePagination";
-import CardLoader from "@/components/loaders/CardLoader";
+import TablePagination from "@/components/Pagination/TablePagination.vue";
+import CardLoader from "@/components/loaders/CardLoader.vue";
 export default {
   components: {
     TablePagination,
@@ -176,7 +176,6 @@ export default {
       this.controlLoader(loader);
       IncentiveService.get_Incentive(params)
         .then((res) => {
-          console.log(res.data);
           this.totalPage = res.data.cadries.pagination.total;
           let number = (this.params.page - 1) * this.params.per_page;
           res.data.cadries.data.forEach((item) => {

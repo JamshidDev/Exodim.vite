@@ -65,7 +65,7 @@
             <div class="text-800 text-sm font-medium">No</div>
           </template>
           <template #body="slotProps">
-            <div class="w-full text-center text-base font-medium">
+            <div class="w-full text-center text-sm font-normal">
               {{ slotProps.data.number }}
             </div>
           </template>
@@ -86,7 +86,7 @@
             </div>
           </template>
         </Column>
-        <Column style="min-width:100px; width:300px">
+        <Column style="min-width:100px; width:200px">
           <template #header>
             <div class="text-800 text-sm lg:text-base xl:text-base font-semibold">
               F.I.SH
@@ -94,7 +94,7 @@
           </template>
           <template #body="slotProps">
             <div
-              class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base"
+              class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base font-normal"
             >
               {{ slotProps.data.fullname }}
             </div>
@@ -109,7 +109,7 @@
           </template>
           <template #body="slotProps">
             <div
-              class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base font-medium"
+              class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base font-normal"
             >
           {{slotProps.data.staff.department_id.name}}
             </div>
@@ -124,14 +124,14 @@
           </template>
           <template #body="slotProps">
             <div
-              class="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-medium"
+              class="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-normal"
             >
               <div
                 class="w-full text-center"
               >
                 <Chip
                 :label="slotProps.data.result"
-                class="mr-2 mb-2 text-sm text-cyan-700 bg-cyan-100 font-bold"
+                class="mr-2 mb-2 text-sm text-cyan-700 bg-cyan-100 font-medium"
               />
               </div>
             </div>
@@ -146,7 +146,7 @@
           </template>
           <template #body="slotProps">
             <div
-              class="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-medium"
+              class="text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-normal"
             >
               <div
                 v-show="slotProps.data.days <= 0"
@@ -154,7 +154,7 @@
               >
                 <Chip
                 :label="`Tugagan \n ${Math.abs(slotProps.data.days)} kun oldin`"
-                class="mr-2 mb-2 text-sm text-red-700 bg-red-100 font-bold"
+                class="mr-2 mb-2 text-sm text-red-700 bg-red-100 font-normal"
               />
               </div>
               <div
@@ -163,13 +163,13 @@
               >
               <Chip
                 :label="`${slotProps.data.days} kun qoldi`"
-                class="mr-2 mb-2 text-sm text-yellow-700 bg-yellow-100 font-bold"
+                class="mr-2 mb-2 text-sm text-yellow-700 bg-yellow-100 font-normal"
               />
               </div>
               <div v-show="slotProps.data.days > 10" class="w-full text-center">
                 <Chip
                 :label="`${slotProps.data.days} kun qoldi`"
-                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-bold"
+                class="mr-2 mb-2 text-sm text-blue-700 bg-blue-100 font-normal"
               />
               </div>
             </div>
@@ -187,7 +187,7 @@
             >
               <Chip
                 :label="formatter.arrowDateFormat(slotProps.data.date1)"
-                class="mr-2 mb-2 text-sm text-purple-700 bg-purple-100 font-bold"
+                class="mr-2 mb-2 text-sm text-purple-700 bg-purple-100 font-medium"
               />
             </div>
           </template>
@@ -205,7 +205,7 @@
             >
             <Chip
                 :label="formatter.arrowDateFormat(slotProps.data.date2)"
-                class="mr-2 mb-2 text-sm text-purple-700 bg-purple-100 font-bold"
+                class="mr-2 mb-2 text-sm text-purple-700 bg-purple-100 font-medium"
               />
             </div>
           </template>

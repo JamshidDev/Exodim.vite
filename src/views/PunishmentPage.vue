@@ -143,8 +143,8 @@
 <script>
 import punishmentService from '@/service/servises/punishmentService'
 import formatter from '@/util/formatter'
-import TablePagination from '@/components/Pagination/TablePagination'
-import CardLoader from "@/components/loaders/CardLoader";
+import TablePagination from '@/components/Pagination/TablePagination.vue'
+import CardLoader from "@/components/loaders/CardLoader.vue";
 export default {
     components:{
         TablePagination,
@@ -171,7 +171,6 @@ export default {
         get_Punishment(params, loader){
           this.controlLoader(loader)
             punishmentService.get_punishment(params).then((res)=>{
-                console.log(res.data);
                 this.totalPage = res.data.cadries.pagination.total
                 let number = (this.params.page - 1) * this.params.per_page;
           res.data.cadries.data.forEach((item) => {
