@@ -4,8 +4,14 @@ const interDateFormatter = function (time) {
 };
 
 const outDateFormatter = function (time) {
-  let newFormatDate = new Date(time).toLocaleDateString("en-CA");
-  return newFormatDate;
+  // let newFormatDate = new Date(time).toLocaleDateString("en-CA");
+  // return newFormatDate;
+  let date = new Date(time);
+  let year = date.getFullYear();
+  let month = date.getMonth()+ 1;
+  let day = date.getDate();
+  let server_format = `${year}-${month}-${day}`
+  return server_format
 };
 
 const textDateFormat = function (time){

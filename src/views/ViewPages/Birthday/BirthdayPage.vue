@@ -55,7 +55,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-normal">
                 {{ slotProps.data.number }}
               </div>
             </template>
@@ -80,7 +80,7 @@
         </Column>
           <Column style="min-width: 200px">
             <template #header>
-              <div class="text-800 font-semibold">F.I.SH</div>
+              <div class="text-800 text-sm lg:text-base xl:text-base font-medium">F.I.SH</div>
             </template>
             <template #body="slotProps">
               <div
@@ -93,8 +93,30 @@
               </div>
             </template>
           </Column>
+          <Column  style="min-width: 100px;">
+            <template #header>
+              <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
+                To'liq lavozimi
+              </div>
+            </template>
+            <template #body="slotProps">
+              <div
+                class="
+                  text-sm
+                  sm:text-sm
+                  md:text-sm
+                  lg:text-base
+                  xl:text-base
+                  font-normal
+                  cursor-pointer
+                "
+              >
+                <div >{{ slotProps.data.staff.staff_full }}</div>
+              </div>
+            </template>
+          </Column>
           
-          <Column  style="min-width: 100px; width: 500px">
+          <Column  style="min-width: 100px; width: 300px">
             <template #header>
               <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
                 
@@ -109,7 +131,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   cursor-pointer
                 "
               >
@@ -119,7 +141,7 @@
               </div>
             </template>
           </Column>
-          <Column  style="min-width: 100px; width: 130px">
+          <Column  style="min-width: 100px; width: 120px">
             <template #header>
               <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
                 
@@ -204,6 +226,7 @@
         this.controlLoaser(true)
         this.params.birth_date = formatter.outDateFormatter(this.today);
           ViewService.get_ViewBirthday(params).then((res)=>{
+            console.log(res.data);
               let number =
               (this.params.page - 1) * this.params.per_page;
               res.data.cadries.data.forEach((item) => {

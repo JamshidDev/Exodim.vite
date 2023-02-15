@@ -68,6 +68,7 @@
               class="w-full font-bold"
               v-model.trim="user.email"
               placeholder="Login"
+              @keyup.enter="login()"
             />
           </div>
           <div class="col-12">
@@ -78,6 +79,7 @@
               inputClass="w-full font-bold"
               toggleMask
               :feedback="false"
+              @keyup.enter="login()"
             ></Password>
           </div>
           <div class="col-12">

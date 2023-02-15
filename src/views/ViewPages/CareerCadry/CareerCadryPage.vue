@@ -55,7 +55,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-normal">
                 {{ slotProps.data.number }}
               </div>
             </template>
@@ -82,7 +82,7 @@
   
           <Column style="min-width: 200px">
             <template #header>
-              <div class="text-800 font-semibold">F.I.SH</div>
+              <div class=" text-800 text-sm lg:text-base xl:text-base font-medium">F.I.SH</div>
             </template>
             <template #body="slotProps">
               <div
@@ -111,7 +111,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   hover:text-blue-500
                   cursor-pointer
                 "

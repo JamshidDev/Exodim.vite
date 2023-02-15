@@ -126,7 +126,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   cursor-pointer
                 "
               >
@@ -144,10 +144,10 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="text-left cursor-pointer font-semibold">
+              <div class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base">
               <Chip
                 :label=" formatter.arrowDateFormat(slotProps.data.birth_date)"
-                class="mr-2 mb-2 text-sm bg-blue-100 text-blue-700 font-bold"
+                class="mr-2 mb-2 text-sm bg-blue-100 text-blue-700 font-semibold"
                 
               />
             </div>
@@ -162,7 +162,7 @@
             </template>
             <template #body="slotProps">
               <div
-                class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base text-center font-medium text-blue-500"
+                class="text-sm sm:text-sm md:text-sm lg:text-base xl:text-base text-center font-normal text-blue-500"
               >
                 {{
                   slotProps.data.cadry_age

@@ -137,7 +137,7 @@
                   lg:text-base
                   xl:text-base
                   text-red-400
-                  font-semibold
+                  font-normal
                 "
               >
                 <span>{{ this.isExpire? 'Kiritilmagan': 'Muddati tugagan' }}</span>

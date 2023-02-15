@@ -241,7 +241,7 @@ import HistoryEmpty from "../components/EmptyComponent/HistoryEmpty.vue";
 import Archive from "../service/servises/Archive";
 import DepartmentStuffService from "@/service/servises/DepartmentStuffService";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
-import SearchLoader from "@/components/loaders/SearchLoader";
+import SearchLoader from "@/components/loaders/SearchLoader.vue";
 import formatter from "../util/formatter";
 export default {
   components: {

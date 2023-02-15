@@ -443,8 +443,6 @@ const routes = [
     ],
   },
 
-  // Home router
-  // Check user details
   {
     path: "/",
     name: "home",

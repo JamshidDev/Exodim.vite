@@ -553,9 +553,9 @@ import globalFactoryService from "../service/servises/globalFactoryService";
 import EmployeeLoader from "../components/loaders/EmployeeLoader.vue";
 import SearchNotFoundPage from "../components/EmptyComponent/SearchNotFoundPage.vue";
 import WordTemplate from "../components/Eksport/WordTemplate.vue";
-import DownloadButton from "@/components/buttons/DownloadButton";
+import DownloadButton from "@/components/buttons/DownloadButton.vue";
 import SmsService from '@/service/servises/SmsService'
-import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
+import BreadCrumb from "@/components/BreadCrumb/BreadCrumb.vue";
 import {mapActions, mapGetters} from "vuex"
 export default {
   components: {

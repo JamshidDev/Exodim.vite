@@ -55,7 +55,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-normal">
                 {{ slotProps.data.number }}
               </div>
             </template>
@@ -111,7 +111,7 @@
             </template>
           </Column>
           
-          <Column  style="min-width: 100px; width: 400px">
+          <Column  style="min-width: 100px; width: 300px">
             <template #header>
               <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
                 
@@ -126,7 +126,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   hover:text-blue-500
                   cursor-pointer
                 "
@@ -178,7 +178,7 @@
   import TablePagination from "../../../components/Pagination/TablePagination.vue";
   import NoDataComponent from "../../../components/EmptyComponent/NoDataComponent.vue";
   import BirthdayLoader from "../../../components/loaders/BrithdayLoader.vue"
-  import DownloadButton from '@/components/buttons/DownloadButton'
+  import DownloadButton from '@/components/buttons/DownloadButton.vue'
   
   export default {
     components: {

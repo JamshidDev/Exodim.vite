@@ -1100,7 +1100,7 @@
 </template>
 <script>
 import TablePagination from "../components/Pagination/TablePagination.vue";
-import DownloadButton from "@/components/buttons/DownloadButton";
+import DownloadButton from "@/components/buttons/DownloadButton.vue";
 import organizationsService from "../service/servises/organizationsService";
 import employeeService from "../service/servises/employeeService";
 import EmployeeLoader from "../components/loaders/EmployeeLoader.vue";

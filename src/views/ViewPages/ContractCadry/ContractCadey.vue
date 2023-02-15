@@ -103,13 +103,7 @@
             <template #body="slotProps">
               <div
                 class="
-                  text-sm
-                  sm:text-sm
-                  md:text-sm
-                  lg:text-base
-                  xl:text-base
-                  font-medium
-                  cursor-pointer
+                text-sm sm:text-sm md:text-sm lg:text-base xl:text-base
                 "
               >
                 <div>{{ slotProps.data.organization.name }}</div>
@@ -193,7 +187,6 @@
       get_List(params){
         this.controlLoaser(true)
           ViewService.get_ViewContractCadry(params).then((res)=>{
-              console.log(res.data.cadries);
               let number =
               (this.params.page - 1) * this.params.per_page;
               res.data.cadries.data.forEach((item) => {

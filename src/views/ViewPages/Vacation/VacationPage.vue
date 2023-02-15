@@ -60,7 +60,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-normal">
                 {{ slotProps.data.number }}
               </div>
             </template>
@@ -97,8 +97,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
-                  hover:text-blue-500
+                  font-normal
                   cursor-pointer
                 "
               >{{ slotProps.data.cadry.fullname }}
@@ -134,7 +133,7 @@
                   lg:text-base
                   xl:text-base
                   text-yellow-400
-                  font-semibold
+                  font-meduim
                 "
               >
                 <span>{{ slotProps.data.status_decret==0? 'Mehnat ta\'tili' : 'Bola parvarish ta\'tili' }}</span>

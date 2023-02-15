@@ -269,6 +269,7 @@ export default {
   border-radius: 10px !important;
 }
 
+
 .sidebar_menu {
   min-height: calc(100vh - 58px);
   .p-menuitem {
@@ -288,11 +289,7 @@ export default {
     background: #51657a !important;
     border-radius: 6px;
   }
-  .p-submenu-header {
-    color: #808c99;
-    font-weight: 500;
-    background-color: transparent;
-  }
+ 
   .p-menuitem-link:focus {
     border-radius: 6px;
     background: #51657a !important;

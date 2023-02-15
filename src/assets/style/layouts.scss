@@ -2,9 +2,18 @@
 @import 'primevue/resources/primevue.min.css';
 @import 'primeflex/primeflex.scss';
 @import 'primeicons/primeicons.css';
-@import 'primevue/resources/themes/bootstrap4-light-blue/theme.css';
+@import 'primevue/resources/themes/lara-light-blue/theme.css';
 
 @import "./varibles.scss";
 @import "./sass/layout.scss";
 @import "./sass/pages/guide";
 @import "./overrides.scss";
+
+.p-menu .p-submenu-header{
+    background-color: transparent !important;
+    color: #808c99 !important;
+    font-size: 12px !important;
+}
+.p-menuitem-content{
+    background-color: transparent !important;
+}

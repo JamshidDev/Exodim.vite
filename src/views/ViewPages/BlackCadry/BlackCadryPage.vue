@@ -55,7 +55,7 @@
               </div>
             </template>
             <template #body="slotProps">
-              <div class="w-full text-center text-base font-medium">
+              <div class="w-full text-center text-sm font-normal">
                 {{ slotProps.data.number }}
               </div>
             </template>
@@ -130,7 +130,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   cursor-pointer
                 "
               >
@@ -154,7 +154,7 @@
                   md:text-sm
                   lg:text-base
                   xl:text-base
-                  font-medium
+                  font-normal
                   cursor-pointer
                 "
               >
@@ -225,6 +225,7 @@
         this.params.date1 = this.formatter.outDateFormatter(this.rangeDate[0])
         this.params.date2 = this.formatter.outDateFormatter(this.rangeDate[1])
           ViewService.get_ViewBlackCadry(params).then((res)=>{
+            console.log(res.data);
               let number =
               (this.params.page - 1) * this.params.per_page;
               res.data.cadries.data.forEach((item) => {
@@ -238,7 +239,6 @@
           })
       },
       changeCalendar(){
-        console.log(this.rangeDate.length);
         if(this.rangeDate[1]!==null){
             this.get_List(this.params)
         }
