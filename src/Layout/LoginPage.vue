@@ -1,122 +1,56 @@
 <template >
- <div class=" login_container">
-  <form
-    class="
-     bg-img
-      w-full
-      min-h-screen
-      overflow-hidden
-      flex
-      justify-content-center
-      align-items-start
-      pt-8
-    "
-  >
-    <div class="question_btn">
-      <Button
-        icon="pi pi-question-circle"
-        class="p-button-rounded p-button-text p-button-lg"
-        v-tooltip="'Yordam'"
-      />
-    </div>
-    <div class="footer_version">
-      <div class="text-sm w-full text-center uppercase font-medium pb-1">
-        Exodim versiya 2.0.0
+  <div class=" login_container">
+
+    <div class="page-walper">
+      <div class="logo-box">
+        <img class="logo-picture" src="https://railway.uz/local/templates/main_v2/img/logo.webp" alt="" />
       </div>
-    </div>
-    <div class="grid w-full lg:pt-0 xl:pt-8">
-     
-      <div class="col-12 xl:col-8 lg:col-7 pt-8 hidden xl:block lg:block">
-        <div class="grid">
-          <div class="col-12 flex justify-content-center">
-            <img
-              class="large_logo mx-auto"
-              src="https://railway.uz/local/templates/main_v2/img/logo.webp"
-            />
-          </div>
-          <div class="col-12 pt-4">
-            <div class="animation_text">
-              <div class="logo_title mt-2  btn-shine font-bold uppercase text-5xl ">
-                O'zbekiston temir yo'llari
-              </div>
-              <div class="logo_subtitle  btn-shine2  mt-6 font-bold uppercase text-3xl ">
-                Aksiyadorlik jamiyati
-              </div>
-            </div>
-          </div>
+      <div class="animation_text">
+        <div class="logo_title mt-2  btn-shine font-bold uppercase text-5xl ">
+          O'zbekiston temir yo'llari
+        </div>
+        <div class="logo_subtitle  btn-shine2  mt-6 font-bold uppercase text-3xl ">
+          Aksiyadorlik jamiyati
         </div>
 
       </div>
-      <div class="col-12 xl:col-4 lg:col-5 lg:px-4 xl:px-6 md:px-4 px-4">
-        <div class="grid lg:pt-4 xl:pt-8">
-          <div class="col-12 lg:hidden xl:hidden ">
-           <div class="col-12 flex justif-content-center">
-             <img
-              class="login_logo mx-auto"
-              src="https://railway.uz/local/templates/main_v2/img/logo.webp"
-              alt=""
-            />
-           </div>
-          </div>
-          <div class="col-12 pb-2">
-            <h3 class="text-center uppercase mb-1 text-2xl text-blue-600">Tizimga kirish</h3>
-            <h3 class="text-blue-600 text-center text-sm uppercase mt-0">Tizimga korxonaga ma'sul xodim sifatida kirish</h3>
-          </div>
-          <div class="col-12">
-            <InputText
-              type="text"
-              class="w-full font-bold"
-              v-model.trim="user.email"
-              placeholder="Login"
-              @keyup.enter="login()"
-            />
-          </div>
-          <div class="col-12">
-            <Password
-              v-model="user.password"
-              placeholder="Parol"
-              class="w-full mb-3 "
-              inputClass="w-full font-bold"
-              toggleMask
-              :feedback="false"
-              @keyup.enter="login()"
-            ></Password>
-          </div>
-          <div class="col-12">
-            <Button
-              label="Kirish"
-              icon="pi pi-enter"
-              iconPos="left"
-              class="w-full uppercase"
-              :loading="loading"
-              @click="login()"
-            />
-          </div>
-          <div class="col-12">
-            <Divider align="center" class="bg-transparent">
-                <span class="text-sm uppercase font-bold text-blue-600 ">Yoki</span>
-            </Divider>
-          </div>
-          <div class="col-12">
-            <Button type="button" class="w-full p-button-success p-button-sm">
-              <i class="pi pi-angle-double-right" style="font-size: 2rem"></i>
-            <span class="ml-2 font-medium uppercase">Ishchi xodim sifatida kirish</span>
-        </Button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12">
-        <Toast />
-      </div>
     </div>
-  </form>
- </div>
+    <div class="page-form">
+      <form class="box-form">
+        <div class="mobile-logo">
+          <img class="logo-picture" src="https://railway.uz/local/templates/main_v2/img/logo.webp" alt="" />
+        </div>
+        <h3 class="login-title">Tizimga kirish</h3>
+        <h3 class="login-subtitle">Tizimga korxonaga ma'sul xodim sifatida kirish</h3>
+        <div class="input-box">
+          <InputText type="text" class="w-full text-input" v-model.trim="user.email" placeholder="Login"
+            @keyup.enter="login()" />
+        </div>
+        <div class="input-box">
+          <Password v-model="user.password" placeholder="Parol" class="w-full mb-3 " inputClass="w-full font-normal"
+            toggleMask :feedback="false" @keyup.enter="login()"></Password>
+        </div>
+        <div class="btn-box">
+          <div class="login-btn" @click="login()"><span>Kirish</span>   <Icon class="fluid_icon" :icon="loading ? 'svg-spinners:bars-rotate-fade' : 'mdi:chevron-right'"
+                        width="20" color="#ffffff" /> </div>
+
+        </div>
+      </form>
+
+    </div>
+    <div class="footer-effect">
+    </div>
+    <Toast />
+</div>
 </template>
 <script>
 import authService from "../service/servises/authService";
+import { Icon } from "@iconify/vue"
 import { mapActions } from "vuex";
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       user: {
@@ -181,12 +115,29 @@ export default {
         })
         .catch((error) => {
           this.controlLoader(false);
-          this.$toast.add({
+          console.log(error.response.status);
+          if(error.response.status == 404){
+            this.$toast.add({
             severity: "error",
-            summary: "Tizimga kirish",
+            summary: "Xatolik",
             detail: "Login yoki parol noto'g'ri",
             life: 3000,
           });
+          }else if (error.response.status>=500){
+            this.$toast.add({
+            severity: "warn",
+            summary: "Server xatosi",
+            detail: "Server bilan bog'lanish yo'q",
+            life: 3000,
+          });
+          }else{
+            this.$toast.add({
+            severity: "error",
+            summary: "Tarmoq xatosi",
+            detail: "Xatolik yuz berdi",
+            life: 3000,
+          });
+          }
         });
     },
     controlLoader(item) {
@@ -196,50 +147,236 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.login_container {
-  background: #1e293b;
+@media (min-width: 1000px) {
+  .login_container {
+  width: 100%;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  background: #1e293b !important;
+  position: relative !important;
+  display: flex;
 
-  & .login_logo {
-    max-width: 80px;
-    height: auto !important;
-    height: auto;
+
+  .page-form {
+    width: 500px;
+    min-height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box-form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      .mobile-logo{
+        display: none;
+      }
+      .login-title {
+        font-size: 24px;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+      }
+
+      .login-subtitle {
+        font-size: 13px;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .btn-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        .login-btn {
+          padding: 10px 30px;
+          background-color: #3B82F6;
+          color: #ffffff;
+          text-transform: uppercase;
+          border: 1px solid #3B82F6;
+          border-radius: 6px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          &:active{
+            transform: scale(0.96);
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+  .page-walper {
+    width: calc(100% - 500px);
+    min-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+
+    .logo-box {
+      display: flex;
+      justify-content: center;
+      padding-top: 100px;
+
+      .logo-picture {
+        width: 120px;
+      }
+    }
+
+    .animation_text {
+      margin: 0px auto;
+      margin-top: 30px;
+    }
+  }
+
+
+  .footer-effect {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 200px;
+    background-image: url("https://vacancy.argos.uz/_nuxt/img/intro-bottom.252c7df.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
   }
 }
-
-.bg-img{
- background-image: url("https://vacancy.argos.uz/_nuxt/img/intro-bottom.252c7df.png");
- background-repeat: no-repeat;
- background-position: bottom;
- background-size: 100%;
- 
 }
+@media (max-width: 999.9px){
+  .login_container {
+  width: 100%;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  background: #1e293b !important;
+  position: relative !important;
+  display: flex;
+
+
+  .page-form {
+    width: 100%;
+    min-height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      .mobile-logo{
+        display: flex;
+        justify-content: center;
+        .logo-picture{
+          width: 80px;
+          animation: logo-animation 0.6s linear infinite;
+        }
+      }
+      .login-title {
+        font-size: 24px;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+      }
+
+      .login-subtitle {
+        font-size: 13px;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .btn-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        .login-btn {
+          padding: 10px 30px;
+          background-color: #3B82F6;
+          color: #ffffff;
+          text-transform: uppercase;
+          border: 1px solid #3B82F6;
+          border-radius: 6px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          &:active{
+            transform: scale(0.96);
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+  .page-walper {
+    display: none !important;
+   
+  }
+
+
+  .footer-effect {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    background-image: url("https://vacancy.argos.uz/_nuxt/img/intro-bottom.252c7df.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+  }
+}
+}
+
+
 
 ::v-deep(.p-password input) {
   width: 15rem;
 }
-.login_logo {
-  height: 70px;
-}
-.large_logo{
-  height: 200px;
-}
-.question_btn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.footer_version{
-  position: absolute;
-  bottom: 0px !important;
-  width: 100% !important;
-  
-}
-
 
 .animation_text {
   position: relative;
 }
+
 .btn-shine {
   position: absolute;
   top: 50%;
@@ -259,6 +396,7 @@ export default {
   text-decoration: none;
   white-space: nowrap;
 }
+
 .btn-shine2 {
   position: absolute;
   top: 50%;
@@ -278,72 +416,70 @@ export default {
   text-decoration: none;
   white-space: nowrap;
 }
+
 @keyframes shine {
   0% {
     background-position: 0;
   }
+
   25% {
     background-position: 150px;
   }
+
   50% {
     background-position: 300px;
   }
+
   75% {
     background-position: 450px;
   }
+
   100% {
     background-position: 600px;
   }
 }
+
 @keyframes shine2 {
   0% {
     background-position: 0;
   }
+
   25% {
     background-position: 100px;
   }
+
   50% {
     background-position: 200px;
   }
+
   75% {
     background-position: 300px;
   }
+
   100% {
     background-position: 400px;
   }
 }
-.min_height_screen {
-  min-height: 100vh;
-  height: 100%;
-}
-.login_banner {
-  background-color: #1e293b;
-  min-height: 100%;
-}
-.login_logo_container {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  & > .logo_picture {
-    height: 200px;
-    margin: 0px auto;
+
+@keyframes logo-animation {
+  0% {
+    transform: scale(0.98);
   }
-  & > .animation_text > .logo_title {
-    font-size: 30px !important;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 0px auto;
-    color: #ffffff;
+  50% {
+    transform: scale(1);
   }
-  & > .animation_text > .logo_subtitle {
-    font-size: 20px;
-    top: 100px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 0px auto;
-    color: #ffffff;
+  100% {
+    transform: scale(0.98);
   }
+  
 }
 
+
 </style>
+
+
+
+
+
+
+

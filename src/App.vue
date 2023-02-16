@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>
+   
       <router-view> </router-view>
       <!-- <layout-vue></layout-vue> -->
-    </div>
-    <div>
+    
+    
       <Dialog
         v-model:visible="server_Error"
         :breakpoints="{
@@ -42,7 +42,7 @@
           </div>
         </template>
       </Dialog>
-    </div>
+   
   </div>
 </template>
 
@@ -133,6 +133,10 @@ export default {
 };
 </script>
 <style lang="scss">
+body{
+  min-height: 100vh !important;
+  display: grid !important;
+}
 .p-dropdown-panel {
     max-width: 100px;
   }
