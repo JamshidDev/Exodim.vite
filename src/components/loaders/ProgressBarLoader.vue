@@ -18,7 +18,7 @@
 export default {
   props:{
     min_height:{
-      type:Number,
+      type:String,
       default:'600px',
     }
   }

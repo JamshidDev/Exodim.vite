@@ -25,7 +25,7 @@
               <h5
                 class="text-base md:m-0 p-as-md-center uppercase text-blue-600"
               >
-                Tibbiy ko'rik
+                Tibbiy ko'rik 
               </h5>
             </div>
             <div

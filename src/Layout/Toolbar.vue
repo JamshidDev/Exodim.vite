@@ -307,6 +307,7 @@ export default {
     this.sidebarActive = this.get_Sidebar;
     let dark = JSON.parse(localStorage.getItem('theme-dark'))
     if(dark){
+      
       this.changeTheme("bootstrap4-dark-blue", true);
       this.isDark = true
     }

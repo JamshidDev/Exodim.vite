@@ -385,7 +385,6 @@ export default {
     get_skill_Types(params, loader) {
       this.controlLoader(loader);
       SkillService.get_Skill_Direction({ params: params }).then((res) => {
-        console.log(res.data);
         let number = (this.params.page - 1) * this.params.per_page;
         res.data.directions.data.forEach((item) => {
           number++;
@@ -405,7 +404,6 @@ export default {
           search: null,
         },
       }).then((res) => {
-        console.log(res.data);
         this.apparats_List = res.data.apparats.data;
       });
     },
@@ -471,7 +469,6 @@ export default {
       }
     },
     deleteItem(id) {
-      console.log(id);
       SkillService.delete_Skill_Direction({ direction_id: id })
         .then((res) => {
           this.get_skill_Types(this.params, false);

@@ -314,12 +314,11 @@ export default {
   },
   watch: {
     cadry_id(id) {
-      console.log(id);
+      
     },
   },
   methods: {
     generateWord(id) {
-      console.log(id);
       EksportService.get_ResumeDetails({ id: id })
         .then((res) => {
           this.editTemplate(res.data);
@@ -334,7 +333,6 @@ export default {
         });
     },
     async editTemplate(item) {
-      console.log(item);
       this.cadry.fullName = item.cadry.fullname;
       this.cadry.phote = item.cadry.photo;
       this.cadry.birth_place = item.cadry.birth_place;
