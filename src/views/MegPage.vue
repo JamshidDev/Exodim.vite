@@ -59,6 +59,7 @@
         v-model:selection="selectitem"
         selectionMode="single"
         style="min-width:950px"
+        v-show="medList.length !== 0"
       >
         <Column header="" style="min-width: 30px; width: 36px">
           <template #header>
@@ -239,6 +240,8 @@
           ></table-pagination>
         </template>
       </DataTable>
+      <NoDataComponent  v-show="medList.length == 0"></NoDataComponent>
+      
     </div>
     <div class="col-12 py-0" v-show="loader">
       <med-loader></med-loader>
@@ -431,6 +434,7 @@ import VacationService from "@/service/servises/VacationService";
 import MedLoader from "../components/loaders/MedLoader.vue";
 import formatter from "../util/formatter";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
+import NoDataComponent from "../components/EmptyComponent/NoDataComponent.vue";
 
 
 export default {
@@ -439,6 +443,7 @@ export default {
     TablePagination,
     MedLoader,
     BreadCrumb,
+    NoDataComponent,
   },
   data() {
     return {

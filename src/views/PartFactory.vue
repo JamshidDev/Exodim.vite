@@ -69,6 +69,7 @@
         class="p-datatable-sm"
         stripedRows
         v-model:selection="selectitem" selectionMode="multiple"
+        v-show="departmentList.length !== 0"
       >
       <Column style="min-width:30px; width:36px">
           <template #header>
@@ -241,6 +242,7 @@
           ></table-pagination>
         </template>
       </DataTable>
+      <NoDataComponent  v-show="departmentList.length == 0"></NoDataComponent>
     </div>
     <div class="col-12 py-0" v-show="loader">
       <department-loader></department-loader>
@@ -447,6 +449,7 @@ import DepartmentService from "../service/servises/DepartmentService";
 import DepartmentStuffService from "@/service/servises/DepartmentStuffService";
 import DepartmentLoader from "../components/loaders/DepartmentLoader.vue";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
+import NoDataComponent from "../components/EmptyComponent/NoDataComponent.vue";
 export default {
   components: {
     DeleteButton,
@@ -455,6 +458,7 @@ export default {
     TablePagination,
     DepartmentLoader,
     BreadCrumb,
+    NoDataComponent,
   },
   data() {
     return {

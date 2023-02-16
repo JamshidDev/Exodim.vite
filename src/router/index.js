@@ -518,13 +518,6 @@ const routes = [
     },
   },
 
-  {
-    path: "/ziprar",
-    name: "ziprar",
-    component: function () {
-      return import("../components/Eksport/ZipRar.vue");
-    },
-  },
 ];
 
 const router = createRouter({

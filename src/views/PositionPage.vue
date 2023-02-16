@@ -51,6 +51,8 @@
         showGridlines
         class="p-datatable-sm"
         stripedRows
+        v-show="positionList.length !== 0"
+        
       >
         <Column header="" style="min-width: 30px; width: 36px">
           <template #header>
@@ -188,6 +190,7 @@
           ></table-pagination>
         </template>
       </DataTable>
+      <NoDataComponent  v-show="positionList.length == 0"></NoDataComponent>
     </div>
 
     <div class="col-12">
@@ -258,6 +261,7 @@ import ViewButtonV from "../components/buttons/ViewButtonV.vue";
 import positionService from "@/service/servises/positionService";
 import positionLoader from "../components/loaders/positionLoader.vue";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
+import NoDataComponent from "../components/EmptyComponent/NoDataComponent.vue";
 
 export default {
   components: {
@@ -267,6 +271,7 @@ export default {
     TablePagination,
     positionLoader,
     BreadCrumb,
+    NoDataComponent,
   },
   data() {
     return {

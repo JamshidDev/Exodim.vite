@@ -13,20 +13,20 @@
       </div>
     </div>
   <div class="col-12" v-if="user_Details">
-    <div class="grid flex xl:justify-content-evenly lg:justify-content-evenly md:justify-content-evenly sm:justify-content-center w-full pt-6 card">
-      <div class="col-12 xl:col-4 lg:col-4 md:col-5 sm:col-8  card bg-primary-reverse py-4 border-round-lg">
+    <div class="grid mr-0 flex xl:justify-content-evenly lg:justify-content-evenly md:justify-content-evenly sm:justify-content-center w-full pt-6 card">
+      <div class="col-12 xl:col-5 lg:col-5 md:col-5 sm:col-8  surface-card  py-4 mb-4 border-round-lg shadow-2 animation-card-one">
         <div class="grid w-full">
           <div class="col-12">
             <div class="grid p-3">
               <div class="col-12">
-                <h6 class="mb-2 text-lg mb-0">Katta korxona</h6>
-                <h6 class="text-base text-800 my-0">
+                <h6 class="mb-2 mb-0 text-sm font-normal text-primary-900">Katta korxona</h6>
+                <h6 class="text-base text-900 my-0 xl:text-2xl lg:text-2xl">
                   {{ user_Details.organization.railway.name }}
                 </h6>
               </div>
               <div class="col-12">
-                <h6 class="text-lg mb-2 mt-2">Korxona</h6>
-                <h6 class="text-base my-0 text-800">
+                <h6 class=" mb-2 mt-2 text-sm font-normal text-primary-900">Korxona</h6>
+                <h6 class="text-base my-0 text-900 xl:text-2xl lg:text-2xl">
                   {{ user_Details.organization.name }}
                 </h6>
               </div>
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="col-12 xl:col-4 lg:col-4 md:col-5 sm:col-8  card surface-0 py-4 border-round-lg">
+      <div class="col-12 xl:col-5 lg:col-5 md:col-5 sm:col-8  card surface-0 py-4 mb-4 border-round-lg surface-card shadow-2 animation-card-two">
         <div class="grid w-full">
           <div class="col-12">
             <div class="flex justify-content-center pb-2 w-full">
@@ -53,7 +53,7 @@
           <div class="col-12">
             <div class="grid xl:px-4">
               <div class="col-12">
-                <h6 class="mb-1 pl-2 text-base text-400">F.I.O</h6>
+                <h6 class="mb-1 pl-2 text-sm font-normal text-500">F.I.O</h6>
                 <InputText
                   type="text"
                   class="w-full font-bold p-inputtext-sm"
@@ -62,7 +62,7 @@
                 />
               </div>
               <div class="col-6">
-                <h6 class="mb-1 pl-2 text-base text-400">Ishxona Telefon</h6>
+                <h6 class="mb-1 pl-2 text-sm font-normal text-500">Ishxona Telefon</h6>
                 <InputText
                   type="text"
                   class="w-full font-bold p-inputtext-sm"
@@ -71,7 +71,7 @@
                 />
               </div>
               <div class="col-6">
-                <h6 class="mb-1 pl-2 text-base text-400">Login</h6>
+                <h6 class="mb-1 pl-2 text-sm font-normal text-500">Login</h6>
                 <InputText
                   type="text"
                   class="w-full font-bold p-inputtext-sm"
@@ -81,7 +81,7 @@
                 />
               </div>
               <div class="col-6">
-                <h6 class="mb-1 pl-2 text-base text-400">Parol</h6>
+                <h6 class="mb-1 pl-2 text-sm font-normal text-500">Parol</h6>
                 <InputText
                   type="text"
                   class="w-full font-bold p-inputtext-sm"
@@ -91,7 +91,7 @@
               </div>
 
               <div class="col-6">
-                <h6 class="mb-1 pl-2 text-base text-400">Yangi Parol</h6>
+                <h6 class="mb-1 pl-2 text-sm font-normal text-500">Yangi Parol</h6>
                 <InputText
                   type="text"
                   class="w-full font-bold p-inputtext-sm"
@@ -116,7 +116,6 @@
 <script>
 import authService from "../service/servises/authService";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
-
 export default {
   components: {
     BreadCrumb,
@@ -130,7 +129,6 @@ export default {
         new_password:null,
         phone:null,
         phote:null,
-
       },
       user_Details:null,
     };
@@ -151,7 +149,6 @@ export default {
         this.user.phote = res.data.photo;
         this.user.phone = res.data.phone;
         this.user.login = res.data.email;
-
       })
     },
     get_Name() {
@@ -168,5 +165,23 @@ export default {
 .p-avatar-xl {
   width: 180px;
   height: 180px;
+}
+.animation-card-one{
+  position: relative;
+  animation: trans-y 0.3s ease-in 1 forwards;
+}
+.animation-card-two{
+  position: relative;
+  opacity: 0;
+  animation: trans-y 0.3s ease-in 0.1s 1 forwards;
+}
+@keyframes trans-y {
+  from{
+    opacity: 0;
+    transform: translateY(50px);
+  }to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 </style>

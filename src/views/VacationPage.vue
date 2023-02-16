@@ -68,6 +68,7 @@
         showGridlines
         class="p-datatable-sm"
         stripedRows
+        v-show="vacation_cadryList.length !== 0"
       >
         <Column header="" style="min-width: 30px; width: 36px">
           <template #header>
@@ -264,6 +265,8 @@
           ></table-pagination>
         </template>
       </DataTable>
+      <NoDataComponent  v-show="vacation_cadryList.length == 0"></NoDataComponent>
+      
     </div>
     <div class="col-12" v-show="loader">
       <vacation-loader></vacation-loader>
@@ -432,6 +435,7 @@ import { globalValidate } from "../validation/vuevalidate";
 import { minLength, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb.vue";
+import NoDataComponent from "../components/EmptyComponent/NoDataComponent.vue";
 export default {
   components: {
     EditButton,
@@ -439,6 +443,7 @@ export default {
     TablePagination,
     VacationLoader,
     BreadCrumb,
+    NoDataComponent,
   },
   setup() {
     const v$ = useVuelidate();

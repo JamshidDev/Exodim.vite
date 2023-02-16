@@ -16,7 +16,7 @@
       />
     </div>
     <div class="col-12"  v-show="!loader">
-      <div class="grid">
+      <div class="grid" v-show="punishmentList.length !== 0">
         <div
          
           class="col-12 xl:col-3 lg:col-3 md:col-3 sm:col-4 p-3"
@@ -93,6 +93,7 @@
           ></table-pagination>
         </div>
       </div>
+      <NoDataComponent  v-show="punishmentList.length == 0"></NoDataComponent>
     </div>
     <div class="col-12" v-show="loader" >
       <card-loader></card-loader>
@@ -149,10 +150,12 @@ import IncentiveService from "@/service/servises/IncentiveService";
 import formatter from "@/util/formatter";
 import TablePagination from "@/components/Pagination/TablePagination.vue";
 import CardLoader from "@/components/loaders/CardLoader.vue";
+import NoDataComponent from "../components/EmptyComponent/NoDataComponent.vue";
 export default {
   components: {
     TablePagination,
     CardLoader,
+    NoDataComponent
   },
   data() {
     return {
