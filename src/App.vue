@@ -132,5 +132,15 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.p-dropdown-panel {
+    max-width: 100px;
+  }
+  
+  .p-dropdown-item {
+    white-space: normal !important;
+  
+  }
+</style>
 
 

@@ -89,9 +89,9 @@
           </template>
         </Column>
 
-        <Column field="name" style="min-width: 100px; width:200px">
+        <Column field="name" style="min-width: 100px; width: 300px">
           <template #header>
-            <div class="text-800 text-sm lg:text-base xl:text-base font-normal">
+            <div class="text-800 text-sm lg:text-base xl:text-base font-medium">
               F.I.SH
             </div>
           </template>
@@ -136,9 +136,7 @@
           </template>
           <template #body="slotProps">
             <div
-              class="
-                text-sm
-                font-medium
+              class=" text-800 text-sm font-normal
               "
             >
               <span>{{ slotProps.data.command_number }}</span>
@@ -153,7 +151,7 @@
             </div>
           </template>
           <template #body="slotProps">
-            <div class="text-sm font-medium">
+            <div class="text-sm font-normal">
               <span>{{ slotProps.data.comment }}</span>
             </div>
           </template>
@@ -167,13 +165,10 @@
           </template>
           <template #body="slotProps">
             <div class="flex w-full align-items-center justify-content-center">
-              <img
-              @click="open_dialog(slotProps.data.id,'', slotProps.data.fullname )"
-                style="width: 34px; height: 30px; object-fit: contain"
-                class="cursor-pointer"
-                src="../../assets/picture/archive_icon.png"
-                alt=""
-              />
+              <edit-button
+                :editItem="slotProps.data"
+                @editEvent="open_dialog($event)"
+              ></edit-button>
             </div>
           </template>
         </Column>
@@ -221,6 +216,7 @@
               v-model.trim="passport_JSHR"
               placeholder="JSHRni kiriting"
               class="w-full p-inputtext-sm text-base font-medium"
+              :class="{ 'p-invalid': !pinfl_Error && submitted }"
               @keyup.enter="passport_JSHR"
               v-maska="'##############'"
             />
@@ -240,6 +236,9 @@
         </template>
       </Dialog>
     </div>
+    <div class="col-12">
+      <Toast position="bottom-right" />
+    </div>
   </div>
 </template>
 <script>
@@ -247,11 +246,13 @@ import BreadCrumb from "../../components/BreadCrumb/BreadCrumb.vue";
 import TablePagination from "../../components/Pagination/TablePagination.vue";
 import EmployeeLoader from "../../components/loaders/EmployeeLoader.vue";
 import Archive from "@/service/servises/Archive";
+import EditButton from "../../components/buttons/EditButton.vue";
 export default {
   components: {
     BreadCrumb,
     TablePagination,
     EmployeeLoader,
+    EditButton,
   },
   data() {
     return {
@@ -260,8 +261,8 @@ export default {
       totalItems: 0,
       loading:false,
       params: {
-        page: localStorage.getItem("page_9") || 1,
-        per_page: localStorage.getItem("per_page_9") || 10,
+        page:localStorage.getItem("page_9")? Number(localStorage.getItem("page_9")) : 1,
+        per_page:localStorage.getItem("per_page_9")? Number(localStorage.getItem("per_page_9")) : 10,
         last_name: null,
         first_name: null,
         middle_name: null,
@@ -270,7 +271,17 @@ export default {
       passport_JSHR:null,
       edit_user_id:null,
       edit_fullname:null,
+      submitted:false,
     };
+  },
+  computed:{
+    pinfl_Error(){
+      if(this.passport_JSHR && this.passport_JSHR.length == 14){
+        return true
+      }else{
+        return false
+      }
+    }
   },
   methods: {
     get_List(loader) {
@@ -285,18 +296,42 @@ export default {
         this.totalItems = res.data.cadries.pagination.total;
         this.cadryList = res.data.cadries.data;
         this.loading = false;
-
       });
     },
-    open_dialog(id,passport_jshr, fullanme){
-      this.edit_user_id = id;
-      this.passport_JSHR = passport_jshr;
-      this.edit_fullname = fullanme;
+    open_dialog(event){
+      this.edit_user_id = event.id;
+      this.passport_JSHR = event.pinfl;
+      this.edit_fullname = event.fullname;
       this.dialog = true;
+      this.submitted = false;
     },
     edit_CadryInfo(){
-      console.log(this.passport_JSHR);
-      this.dialog = false;
+      this.submitted = true;
+      if(this.pinfl_Error){
+        this.dialog = false;
+        Archive.update_CadryPinfl({archive_cadry_id: this.edit_user_id, data:{pinfl: this.passport_JSHR}}).then((res) =>{
+          console.log(res.data.status);
+          if(res.data.status){
+            this.$toast.add({
+            severity: "success",
+            summary: `${res.data.message}`,
+            detail: "",
+            life: 2000,
+          });
+          this.get_List();
+          }else{
+            this.$toast.add({
+            severity: "warn",
+            summary: `${res.data.message}`,
+            detail: `${res.data.cadry.fullname}(${res.data.cadry.organization})`,
+            life: 3000,
+          });
+          }
+        })
+        
+      }else{
+      }
+      
     },
     
     changePagination(event) {
@@ -312,3 +347,5 @@ export default {
   },
 };
 </script>
+<style lang="">
+</style>
