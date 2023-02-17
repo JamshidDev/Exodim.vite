@@ -166,6 +166,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
 
     .box-form {
       width: 100%;
@@ -269,6 +271,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 9;
 
   }
 }
@@ -289,6 +292,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
 
     .box-form {
       width: 100%;
@@ -373,6 +378,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 9;
 
   }
 }
