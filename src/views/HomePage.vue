@@ -2,10 +2,10 @@
     <div class="w-full">
         <div class="grid">
             <div class="col-12 flex justify-content-center pt-10">
-                <img class="logo-picture" src="https://railway.uz/local/templates/main_v2/img/logo.webp" alt="">
+                <img class="logo-picture" src="../assets/kadr-logo.png" alt="">
             </div>
-            <div class="col-12 font-semibold uppercase text-lg text-center">"O'zbekiston temir yo'llari"</div>
-            <div class="col-12 font-semibold uppercase text-base text-center">Aksiyadorlik Jamiyati</div>
+            <div class="col-12 font-semibold uppercase text-lg text-center">Odas Enerji CA</div>
+            <!-- <div class="col-12 font-semibold uppercase text-base text-center">Aksiyadorlik Jamiyati</div> -->
         </div>
     </div>
 </template>
@@ -16,6 +16,6 @@ export default {
 </script>
 <style lang="scss" scoped>
     .logo-picture{
-        width: 100px;
+        width: 200px;
     }
 </style>

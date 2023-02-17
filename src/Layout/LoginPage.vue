@@ -21,7 +21,7 @@
     </div>
     <div class="footer_version">
       <div class="text-sm w-full text-center uppercase font-medium pb-1">
-        Exodim versiya 2.0.0
+        versiya 2.0.0
       </div>
     </div>
     <div class="grid w-full lg:pt-0 xl:pt-8">
@@ -31,16 +31,16 @@
           <div class="col-12 flex justify-content-center">
             <img
               class="large_logo mx-auto"
-              src="https://railway.uz/local/templates/main_v2/img/logo.webp"
+              src="@/assets/kadr-logo.png"
             />
           </div>
           <div class="col-12 pt-4">
             <div class="animation_text">
               <div class="logo_title mt-2  btn-shine font-bold uppercase text-5xl ">
-                O'zbekiston temir yo'llari
+                Odas Enerji CA
               </div>
               <div class="logo_subtitle  btn-shine2  mt-6 font-bold uppercase text-3xl ">
-                Aksiyadorlik jamiyati
+                Mas'uliyati cheklangan jamiyati 
               </div>
             </div>
           </div>
@@ -53,14 +53,14 @@
            <div class="col-12 flex justif-content-center">
              <img
               class="login_logo mx-auto"
-              src="https://railway.uz/local/templates/main_v2/img/logo.webp"
+              src="@/assets/kadr-logo.png"
               alt=""
             />
            </div>
           </div>
           <div class="col-12 pb-2">
             <h3 class="text-center uppercase mb-1 text-2xl text-blue-600">Tizimga kirish</h3>
-            <h3 class="text-blue-600 text-center text-sm uppercase mt-0">Tizimga korxonaga ma'sul xodim sifatida kirish</h3>
+            <h3 class="text-blue-600 text-center text-sm uppercase mt-0">Korxonaga ma'sul xodim sifatida kirish</h3>
           </div>
           <div class="col-12">
             <InputText
@@ -200,7 +200,7 @@ export default {
   background: #1e293b;
 
   & .login_logo {
-    max-width: 80px;
+    max-width: 120px;
     height: auto !important;
     height: auto;
   }
