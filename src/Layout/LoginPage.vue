@@ -31,7 +31,7 @@
             toggleMask :feedback="false" @keyup.enter="login()"></Password>
         </div>
         <div class="btn-box">
-          <div class="login-btn" @click="login()"><span>Kirish</span>   <Icon class="fluid_icon" :icon="loading ? 'svg-spinners:bars-rotate-fade' : 'mdi:chevron-right'"
+          <div class="login-btn" :class="!loading&&'active-btn-login'" @click="login()"><span>Kirish</span>   <Icon class="fluid_icon" :icon="loading ? 'svg-spinners:bars-rotate-fade' : 'mdi:chevron-right'"
                         width="20" color="#ffffff" /> </div>
 
         </div>
@@ -63,9 +63,11 @@ export default {
   methods: {
     ...mapActions(["set_adminPermissions"]),
     login() {
-      this.controlLoader(true);
-      authService
-        .loginAdmin(this.user)
+      
+      
+       if(!this.loading){
+        this.controlLoader(true);
+        authService.loginAdmin(this.user)
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("access_token", res.data.access_token);
@@ -139,6 +141,7 @@ export default {
           });
           }
         });
+       }
     },
     controlLoader(item) {
       this.loading = item;
@@ -212,11 +215,19 @@ export default {
           display: flex;
           gap: 10px;
           align-items: center;
-          cursor: pointer;
+          cursor: wait;
           transition: all 0.2s ease;
+          user-select: none;
+          opacity: 0.5;
+         
+        }
+        .active-btn-login{
           &:active{
             transform: scale(0.96);
+           
           }
+          opacity: 1;
+          cursor: pointer;
         }
       }
 

@@ -2,7 +2,6 @@ import axios from "axios";
 import router from "../router/index"
 const instance = axios.create({
     baseURL: `https://exodim.railway.uz`
-    // baseURL: `http://exodim.itdevs.uz`
 });
 
 instance.interceptors.request.use(function (config) {

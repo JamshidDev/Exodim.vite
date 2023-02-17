@@ -1,10 +1,10 @@
 <template>
   <div>
-   
+    <div>
       <router-view> </router-view>
       <!-- <layout-vue></layout-vue> -->
-    
-    
+    </div>
+    <div>
       <Dialog
         v-model:visible="server_Error"
         :breakpoints="{
@@ -42,6 +42,12 @@
           </div>
         </template>
       </Dialog>
+    </div>
+   
+      
+    
+    
+    
    
   </div>
 </template>
