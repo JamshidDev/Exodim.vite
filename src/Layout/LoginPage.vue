@@ -3,7 +3,7 @@
 
     <div class="page-walper">
       <div class="logo-box">
-        <img class="logo-picture" src="https://railway.uz/local/templates/main_v2/img/logo.webp" alt="" />
+        <img class="logo-picture" src="../assets/logo.webp"  alt="" />
       </div>
       <div class="animation_text">
         <div class="logo_title mt-2  btn-shine font-bold uppercase text-5xl ">
@@ -18,7 +18,7 @@
     <div class="page-form">
       <form class="box-form">
         <div class="mobile-logo">
-          <img class="logo-picture" src="https://railway.uz/local/templates/main_v2/img/logo.webp" alt="" />
+          <img class="logo-picture" src="../assets/logo.webp" alt="" />
         </div>
         <h3 class="login-title">Tizimga kirish</h3>
         <h3 class="login-subtitle">Tizimga korxonaga ma'sul xodim sifatida kirish</h3>
