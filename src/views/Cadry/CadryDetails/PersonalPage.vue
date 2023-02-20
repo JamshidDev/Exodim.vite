@@ -802,7 +802,7 @@
               <span class="pl-2 text-500">Dekretdagi xodim o'rniga</span>
             </div>
             <div class="xl:col-4 lg:col-4 md:col-4 col-12">
-              <Checkbox inputId="binary" v-model="status_decret" />
+              <Checkbox inputId="binary" v-model="status_decret"   :binary="true"/>
               <span class="pl-2 text-500">Dekretdagi xodim?</span>
             </div>
             <div class="col-12">
@@ -1378,10 +1378,10 @@ export default {
         this.stuff_statusList = res.data.staff_statuts;
         this.stuff_status = res.data.staff_status;
         this.stuff_plan = res.data.rate;
-        this.status_sverx = res.data.status_decret == 1;
-        this.status_decret = res.data.status_for_decret == 1;
-        (this.command_number = null),
-          (this.stuff_date = formatter.interDateFormatter(res.data.staff_date));
+        this.status_sverx = res.data.status_sverx == 1;
+        this.status_decret = res.data.status_decret == 1;
+        this.command_number = null;
+        this.stuff_date = formatter.interDateFormatter(res.data.staff_date);
         this.controlstuffDialog(true);
         this.get_check_career();
       });

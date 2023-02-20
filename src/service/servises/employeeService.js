@@ -102,6 +102,9 @@ const get_newStuffDetails= (payload)=>{
     return axios.get(`/api/organization/new-cadry-staff/${payload.id}`)
 }
 
+const get_CadryInfoTranslate= (payload)=>{
+    return axios.get(`/api/organization/cadry/${payload.cadry_id}/translate`)
+}
 
 
 
@@ -121,4 +124,5 @@ const get_newStuffDetails= (payload)=>{
 
 
 
-export default {get_Employees,get_Department,get_Stuffs,get_employeeDetails, get_employeeAvatar,update_empolyee,get_workLevel, get_CadryUniversity,get_CadryInfo,get_Languages,get_Party,get_universityList, update_CadryUniversity, adding_CadryUniversity, delete_CadryUniversity, get_Info, update_Info,remove_Cadry, update_CadryStuff, get_checkCarrer,edit_CadryStuff,create_CadryStuff, get_newStuffDetails,delete_CadryStuff}
+
+export default {get_Employees,get_Department,get_Stuffs,get_employeeDetails, get_employeeAvatar,update_empolyee,get_workLevel, get_CadryUniversity,get_CadryInfo,get_Languages,get_Party,get_universityList, update_CadryUniversity, adding_CadryUniversity, delete_CadryUniversity, get_Info, update_Info,remove_Cadry, update_CadryStuff, get_checkCarrer,edit_CadryStuff,create_CadryStuff, get_newStuffDetails,delete_CadryStuff, get_CadryInfoTranslate}
