@@ -84,7 +84,7 @@ import "./assets/style/layouts.scss"
 
 const app = createApp(App)
 
-app.use(PrimeVue, { ripple: true, inputStyle: 'outlined' })
+app.use(PrimeVue)
 app.use(ToastService);
 app.use(store)
 app.use(router)

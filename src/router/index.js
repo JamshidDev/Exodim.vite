@@ -50,6 +50,13 @@ const routes = [
         },
       },
       {
+        path: "/test",
+        name: "test",
+        component: function () {
+          return import("../views/Resume/ViewWord.vue");
+        },
+      },
+      {
         path: "/admin/statistic",
         name: "statistic",
         component: function () {
