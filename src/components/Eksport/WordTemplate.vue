@@ -362,6 +362,7 @@ export default {
         nationality: null,
         party: null,
         education: null,
+        // base64:null,
       },
     };
   },
@@ -377,6 +378,8 @@ export default {
         .then((res) => {
           this.editTemplate(res.data);
           let fileName = res.data.cadry.fullname;
+          // this.cadry.base64 = res.data.img_base64;
+
           setTimeout(() => {
             this.Export2Word("exportContent", fileName);
           }, 400);
@@ -389,6 +392,7 @@ export default {
       console.log(item);
       this.cadry.fullName = item.cadry.fullname;
       this.cadry.phote = item.cadry.photo;
+      // this.cadry.phote = res.data.img_base64;
       this.cadry.birth_place = item.cadry.birth_place;
       this.cadry.birth_date = item.cadry.birth_date;
       this.cadry.post_name = item.cadry.staff.staff_full;
