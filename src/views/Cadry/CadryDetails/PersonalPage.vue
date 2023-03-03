@@ -801,10 +801,10 @@
               />
               <span class="pl-2 text-500">Dekretdagi xodim o'rniga</span>
             </div>
-            <div class="xl:col-4 lg:col-4 md:col-4 col-12">
+            <!-- <div class="xl:col-4 lg:col-4 md:col-4 col-12">
               <Checkbox inputId="binary" v-model="status_decret"   :binary="true"/>
               <span class="pl-2 text-500">Dekretdagi xodim?</span>
-            </div>
+            </div> -->
             <div class="col-12">
               <Checkbox inputId="binary" v-model="add_career" :binary="true" />
               <span class="pl-2 text-500"
@@ -1350,6 +1350,7 @@ export default {
       this.update_career = null;
       let id = this.$route.params.id;
       employeeService.get_newStuffDetails({ id }).then((res) => {
+        console.log(res.data);
         this.stuff_departmentList = res.data.departments;
         this.stuff_stuffList = [];
         this.stuff_stuff = null;
@@ -1380,6 +1381,7 @@ export default {
         this.stuff_plan = res.data.rate;
         this.status_sverx = res.data.status_sverx == 1;
         this.status_decret = res.data.status_decret == 1;
+        this.status_for_decret = res.data.status_for_decret ==1? true : false;
         this.command_number = null;
         this.stuff_date = formatter.interDateFormatter(res.data.staff_date);
         this.controlstuffDialog(true);
