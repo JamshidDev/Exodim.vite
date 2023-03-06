@@ -463,7 +463,7 @@
                 :color="'bg-green-600 active:bg-green-600'"
                 :border="'border-1 border-green-600 border-round'"
                 :icon="'pi pi-cloud-download'"
-                @click="DowloadResume(slotProps.data.id)"
+                @click="DowloadResume(slotProps.data.id, slotProps.data.fullname)"
               ></download-button>
             </div>
           </template>
@@ -841,9 +841,8 @@ export default {
     },
 
     // Dowload resume
-    DowloadResume(id) {
-      console.table(id);
-      this.$refs.word_resume.generateWord(id);
+    DowloadResume(id, fullName) {
+      this.$refs.word_resume.generateWord(id, fullName);
     },
     goPushDetails(id) {
       this.$router.push(`/admin/employee/view/${id}`);

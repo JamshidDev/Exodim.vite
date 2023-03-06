@@ -34,7 +34,7 @@
               />
             </h6>
 
-            <Button label="Yuklash" @click="DowloadResume($route.params.id)" class="p-button-raised p-button-info px-4" />
+            <Button label="Yuklash" @click="DowloadResume($route.params.id, cadry.fullName)" class="p-button-raised p-button-info px-4" />
           </div>
 
           <div class="col-12 py-4 pl-4 md:col-12 lg:col-4 xl:col-4">
@@ -676,9 +676,8 @@ export default {
     controlLoader(item) {
       this.loader = item;
     },
-    DowloadResume(id) {
-      console.table(id);
-      this.$refs.word_resumes.generateWord(id);
+    DowloadResume(id, fullName) {
+      this.$refs.word_resumes.generateWord(id, fullName);
     },
     goBack(){
        this.$router.go(-1)
